@@ -44,3 +44,64 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+Oppgave: Oppgaven er som følger:
+
+Lag en side med spørsmål og svar (QA) som bruker et trekkspill (accordion) for å vise og skjule svarene. Data skal hentes fra et Contentful API. Du kan fritt velge hvilke teknologier du vil bruke så lenge løsningen er basert på JavaScript, CSS og HTML.
+
+Du kan benytte REST API eller GraphQL API for å hente ut data fra Contentful. Vi har inkludert eksempler på oppsett med Contentful-klienten i JavaScript, og lenker til dokumentasjon og testgrensesnitt for GraphQL.
+
+Contentful-klient:  
+npm install contentful
+
+import { createClient } from "contentful"
+
+const client = createClient({
+
+                accessToken: <access_token>
+
+                space: <space_id>,
+
+           })
+
+const response = await client.getEntries({
+
+                content_type: "accordion",
+
+include: 2,
+
+            })
+
+Dokumentasjon: https://contentful.github.io/contentful.js/contentful/10.1.4/
+
+GraphQL:
+
+GraphQL Apiet er tilgjengelig her: https://graphql.contentful.com/content/v1/spaces/{SPACE}/environments/{ENVIRONMENT}
+
+Bytt ut space og environment med riktig verdi (lagt ved lenger ned i oppgaven).
+Access_token kan enten sendes med som authentication header, eller som query parameter «access_token».
+
+Testgrensesnitt for graphQL finner du her:
+
+https://graphql.contentful.com/content/v1/spaces/{SPACE}/environments/{ENVIRONMENT} /explore?access_token={access_token}
+
+Dokumentasjon: https://www.contentful.com/developers/docs/references/graphql/#/introduction/basic-api-information
+
+Tilleggsinformasjon:
+For å benytte APIet mot Contentful, har du behov for space, environment og access_token. Disse kommer under her:
+
+Access_token: nlYde6hGa_MS0B0Ip1pMMQFGs0icI_ntabFjMhrjaUw
+
+Space: q0fnx0gj00da
+
+Environment: master
+
+Vi legger vekt på;
+
+kodekvalitet,
+organisering av prosjektet,
+visuell profil,
+struktur og
+enkel forvaltning/videreutvikling.
+
+Det er også mulig å få «ekstrapoeng» ved å skrive tester og inkludere dem i besvarelsen.

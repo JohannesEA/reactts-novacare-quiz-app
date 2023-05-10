@@ -3,7 +3,7 @@ import Homepage from "./pages/homepage/Homepage";
 const App = () => {
   return (
     <>
-      <Homepage title="Hello world" />
+      <Homepage title="Spørsmål og svar om Nocavare" />
     </>
   );
 };

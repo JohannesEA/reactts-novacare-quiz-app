@@ -34,3 +34,15 @@ p {
     line-height: 1.5;
     margin: 0.5em 0;
 }
+
+html {
+    --black: #010a26;
+    --black-hover: #1a223b;
+    --dark-blue: #011640;
+    --dark-blue-hover: #1a2d53;
+    --blue: #b6d6f2;
+    --blue-hover: #bddaf3;
+    --white: #fffdfa;
+    --red: #e83338;
+    --border-radius: 0.2em;
+}

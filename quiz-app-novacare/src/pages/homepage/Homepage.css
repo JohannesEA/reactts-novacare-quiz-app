@@ -2,12 +2,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+    flex-direction: column;
+    background-color: var(--white);
+    height: 100%;
+    padding: 1rem;
+    overflow-y: auto;
+    position: relative;
 }
 
 .homepage__title {
     font-size: 3rem;
     font-weight: bold;
-    color: #333;
+    color: var(--black);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--white);
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.homepage__error-text {
+    color: var(--red);
+}
+
+.homepage__loading-text {
+    color: var(--black);
+}
+
+
+/* Responsive styles */
+
+@media screen and (max-width: 768px) {
+    .homepage__title {
+        font-size: 2rem;
+    }
 }
