@@ -21,3 +21,10 @@ Fremgangsmåte:
 4. Rediger frontend slik at det ser bra ut og at dataen som er hentet vises korrekt i brukergrensesnittet.
 
    - Inkluder håndtering av loading- og error-state
+
+5. Lag test for hooks
+
+Informasjon om hvordan å kjøre appen og teste
+
+1. npm start --> kjører opp appen i localhost
+2. npm test src/test/accordion.test.ts --> tester min custom hook
