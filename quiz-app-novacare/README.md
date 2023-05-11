@@ -1,30 +1,42 @@
-Oppgave: Lag en app som henter data fra contentful api og viser det frem i et brukergrensesnitt.
+# Project: Contentful Data Fetching Application
 
-Fremgangsmåte:
+### This project involves developing an application that fetches data from the Contentful API and displays it in a user interface.
 
-1. Lag skjelett for prosjektet med "hello world"
+## Running and Testing the Application
 
-2. Finn ut hvordan dataen som skal hentes ser ut:
+Clone: **git clone https://github.com/JohannesEA/reactts-novacare-quiz-app.git**
+Build: **npm install** or **npm install --legacy-peer-deps** (the --legacy-peer-deps becaues the testing-lib does not support react 18 yet..)
+Run locally: **npm start**
+Run tests: **npm test src/test/accordion.test.ts**
 
-   - For å gjøre dette brukte jeg funksjonen som var gitt i oppgavebeskrivelsen:
+## How i created the project, step by step
 
-     - const response = await contentfulClient.getEntries({
-       content_type: "accordion",
-       include: 2,
-       });
+### Step 1: Project Setup
 
-3. Lag en query som henter ut ønsket data
+Start by setting up the basic structure of your project. At this point, your application should display a "Hello World" message.
 
-   - Gå til grapghql test-nettsiden: https://graphql.contentful.com/content/v1/spaces/<...>/environments/<...>/explore?access_token=<...>
-   - Her så jeg typene for dataen og lagde egne typer i prosjektet: AccordionItem og AccordionItemCollection var de typene jeg fant relevante for oppgaven
+### Step 2: Understand the Data Structure
 
-4. Rediger frontend slik at det ser bra ut og at dataen som er hentet vises korrekt i brukergrensesnittet.
+You need to understand the structure of the data you're fetching. In this project, we use the function provided in the project description to fetch data from Contentful:
 
-   - Inkluder håndtering av loading- og error-state
+javascript
+Copy code
+const response = await contentfulClient.getEntries({
+content_type: "accordion",
+include: 2,
+});
 
-5. Lag test for hooks
+### Step 3: Construct Query to Fetch Desired Data
 
-Informasjon om hvordan å kjøre appen og teste
+With a clear understanding of the data structure, you can now construct a query to fetch the specific data you need. Here's how:
 
-1. npm start --> kjører opp appen i localhost
-2. npm test src/test/accordion.test.ts --> tester min custom hook
+Visit the GraphQL test page at: https://graphql.contentful.com/content/v1/spaces/<...>/environments/<...>/explore?access_token=<...>.
+Examine the data types and define corresponding types in your project. For this project, the relevant types are AccordionItem and AccordionItemCollection.
+
+### Step 4: Update Frontend
+
+Adjust your frontend to ensure it's visually appealing and effectively displays the fetched data. Remember to handle both loading and error states.
+
+### Step 5: Write Tests for Your Hook
+
+Create tests for your hook using this library: https://github.com/testing-library/react-hooks-testing-library

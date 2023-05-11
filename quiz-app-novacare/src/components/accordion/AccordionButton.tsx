@@ -23,9 +23,9 @@ const AccordionButton: React.FC<AccordionButtonProps> = ({
       <button className={`${prefix}__button`} onClick={toggleAccordion}>
         {title}
         {isOpen ? (
-          <IoIosArrowUp className="accordion__icon" />
+          <IoIosArrowUp className={`${prefix}__icon`} />
         ) : (
-          <IoIosArrowDown className="accordion__icon" />
+          <IoIosArrowDown className={`${prefix}__icon`} />
         )}
       </button>
       {isOpen && (
