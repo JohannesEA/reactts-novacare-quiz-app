@@ -26,7 +26,7 @@ include: 2,
 
 ### Step 3: Construct Query to Fetch Desired Data
 
-I visited Grapql to test page at: https://graphql.contentful.com/content/v1/spaces/<...>/environments/<...>/explore?access_token=<...>.
+I visited Graphql to test page at: https://graphql.contentful.com/content/v1/spaces/<...>/environments/<...>/explore?access_token=<...>.
 I found that the relevant types are AccordionItem and AccordionItemCollection.
 
 Then i created the query for fetching the relevant data
