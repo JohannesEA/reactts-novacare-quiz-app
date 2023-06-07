@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AccordionButton from "../../components/accordion/AccordionButton";
 import useFetchAccordionItemCollection from "../../hooks/useFetchAccordionItemCollection";
 import "./Homepage.css";
@@ -9,6 +10,11 @@ interface HomepageProps {
 const Homepage: React.FC<HomepageProps> = ({ title }) => {
   const prefix = "homepage";
   const { data, error, loading } = useFetchAccordionItemCollection();
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  const handleClick = (index: number) => {
+    setActiveIndex(index === activeIndex ? -1 : index);
+  };
 
   return (
     <div className={`${prefix}__wrapper`}>
@@ -26,6 +32,8 @@ const Homepage: React.FC<HomepageProps> = ({ title }) => {
             key={index}
             title={accordion.name}
             content={accordion.text}
+            onClick={() => handleClick(index)}
+            isActive={activeIndex === index}
           />
         ))}
     </div>
